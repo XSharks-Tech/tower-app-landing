@@ -1,6 +1,6 @@
 import HeroSection from "@/components/sections/HeroSection";
 import BenefitsSection from "@/components/sections/BenefitsSection";
-import BaseSection from "@/components/sections/BaseSection";
+import PricingStepsSection from "@/components/sections/PricingStepsSection";
 import ComparisonSection from "@/components/sections/ComparisonSection";
 import InsideSection from "@/components/sections/InsideSection";
 import BotAISection from "@/components/sections/BotAISection";
@@ -13,14 +13,20 @@ import FinalCTASection from "@/components/sections/FinalCTASection";
 const Index = () => {
   return (
     <main className="min-h-screen bg-background overflow-x-hidden">
+      {/* Red announcement banner */}
+      <section className="w-full bg-red-600 py-3">
+        <p className="text-center text-white font-extrabold text-lg md:text-xl tracking-widest uppercase">
+          LANÇAMENTO EXCLUSIVO
+        </p>
+      </section>
       <HeroSection />
       <BenefitsSection />
-      <BaseSection />
+      <AuthoritySection />
+      <PricingStepsSection />
       <ComparisonSection />
       <InsideSection />
       <BotAISection />
       <BelongingSection />
-      <AuthoritySection />
       <OfferSection />
       <FAQSection />
       <FinalCTASection />

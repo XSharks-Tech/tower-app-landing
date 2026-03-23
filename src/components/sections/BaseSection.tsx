@@ -10,7 +10,7 @@ const pillars = [
 
 const BaseSection = () => {
   return (
-    <section className="section-padding relative">
+    <section className="section-padding bg-grid relative">
       <div className="section-container">
         <AnimatedSection className="text-center mb-16">
           <h2 className="headline-lg mb-5">
@@ -40,7 +40,7 @@ const BaseSection = () => {
         <AnimatedSection delay={0.3} className="hidden lg:flex justify-center mt-8">
           <div className="flex items-center gap-0">
             {[0, 1, 2].map((i) => (
-              <div key={i} className="w-24 h-px bg-gradient-to-r from-[hsl(var(--glow-cyan)/0.3)] to-[hsl(var(--glow-violet)/0.3)]" />
+              <div key={i} className="w-24 h-px bg-gradient-to-r from-[hsl(187_82%_53%/0.3)] to-[hsl(199_89%_48%/0.15)]" />
             ))}
           </div>
         </AnimatedSection>

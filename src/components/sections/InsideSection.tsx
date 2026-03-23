@@ -13,7 +13,7 @@ const features = [
 
 const InsideSection = () => {
   return (
-    <section className="section-padding relative">
+    <section className="section-padding bg-grid relative">
       <div className="section-container">
         <AnimatedSection className="text-center mb-16">
           <h2 className="headline-lg mb-5">

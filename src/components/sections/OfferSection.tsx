@@ -11,7 +11,7 @@ const items = [
 
 const OfferSection = () => {
   return (
-    <section id="oferta" className="section-padding bg-glow-center relative">
+    <section id="oferta" className="section-padding bg-glow-center bg-grid relative">
       <div className="section-container">
         <AnimatedSection className="text-center mb-12">
           <span className="badge-glow mb-6 inline-flex">

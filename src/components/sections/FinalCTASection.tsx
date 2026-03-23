@@ -2,9 +2,9 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 
 const FinalCTASection = () => {
   return (
-    <section className="section-padding bg-glow-bottom relative overflow-hidden">
+    <section className="section-padding bg-glow-bottom bg-grid relative overflow-hidden">
       {/* Ambient glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-[radial-gradient(ellipse,hsl(var(--glow-cyan)/0.1),transparent_70%)] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-[radial-gradient(ellipse,hsl(187_82%_53%/0.08),transparent_70%)] pointer-events-none" />
 
       <div className="section-container relative z-10 text-center">
         <AnimatedSection>

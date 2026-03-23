@@ -4,7 +4,7 @@ import { Sparkles } from "lucide-react";
 
 const BotAISection = () => {
   return (
-    <section className="section-padding bg-glow-center relative">
+    <section className="section-padding bg-glow-center bg-grid relative">
       <div className="section-container">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Text */}
@@ -32,7 +32,7 @@ const BotAISection = () => {
                 loading="lazy"
               />
               {/* Corner glow */}
-              <div className="absolute -top-4 -right-4 w-32 h-32 rounded-full bg-[radial-gradient(ellipse,hsl(var(--glow-violet)/0.15),transparent_70%)] pointer-events-none" />
+              <div className="absolute -top-4 -right-4 w-32 h-32 rounded-full bg-[radial-gradient(ellipse,hsl(187_82%_53%/0.12),transparent_70%)] pointer-events-none" />
             </div>
           </AnimatedCard>
         </div>

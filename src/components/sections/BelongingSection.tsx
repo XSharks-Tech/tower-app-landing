@@ -2,7 +2,7 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 
 const BelongingSection = () => {
   return (
-    <section className="section-padding relative overflow-hidden">
+    <section className="section-padding bg-grid relative overflow-hidden">
       {/* Background glow */}
       <div className="absolute inset-0 bg-glow-bottom pointer-events-none" />
 

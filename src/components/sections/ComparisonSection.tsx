@@ -2,7 +2,7 @@ import { AnimatedSection, AnimatedCard } from "@/components/AnimatedSection";
 import { Check, Minus, X } from "lucide-react";
 
 const criteria = [
-  { label: "Organização da base", sheet: "partial", trad: "yes", tower: "yes" },
+  { label: "Organização da base", sheet: "yes", trad: "yes", tower: "yes" },
   { label: "Controle de estoque", sheet: "partial", trad: "yes", tower: "yes" },
   { label: "Visão de CMV", sheet: "partial", trad: "partial", tower: "yes" },
   { label: "Clareza da margem real", sheet: "no", trad: "partial", tower: "yes" },
@@ -24,7 +24,7 @@ const StatusIcon = ({ status }: { status: string }) => {
 
 const ComparisonSection = () => {
   return (
-    <section className="section-padding bg-glow-center relative">
+    <section className="section-padding bg-glow-center bg-grid relative">
       <div className="section-container">
         <AnimatedSection className="text-center mb-16">
           <h2 className="headline-lg mb-5 max-w-3xl mx-auto">
