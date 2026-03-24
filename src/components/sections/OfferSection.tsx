@@ -50,7 +50,7 @@ const OfferSection = () => {
             </div>
 
             {/* CTA */}
-            <a href="#" className="cta-primary w-full block text-center">
+            <a href="https://tower.estrategos.online/cadastro" target="_blank" rel="noopener noreferrer" className="cta-primary w-full block text-center">
               Quero acessar agora
             </a>
           </div>

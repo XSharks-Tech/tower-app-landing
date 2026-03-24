@@ -15,7 +15,7 @@ const FinalCTASection = () => {
           <p className="subtitle mx-auto mb-10">
             Entre agora na Tower App e comece a usar uma forma mais moderna, inteligente e visual de conduzir margem, controle e precificação.
           </p>
-          <a href="#oferta" className="cta-primary">
+          <a href="https://tower.estrategos.online/cadastro" target="_blank" rel="noopener noreferrer" className="cta-primary">
             Quero acessar agora
           </a>
         </AnimatedSection>
