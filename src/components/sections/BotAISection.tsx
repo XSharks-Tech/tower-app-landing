@@ -1,6 +1,9 @@
-import { AnimatedSection, AnimatedCard } from "@/components/AnimatedSection";
-import mockupBotAI from "@/assets/mockup-bot-ai.png";
+import { AnimatedSection } from "@/components/AnimatedSection";
+import DeviceMockup from "@/components/ui/DeviceMockup";
 import { Sparkles } from "lucide-react";
+
+const MOCKUP_BOT_AI =
+  "https://estrategos.online/wp-content/uploads/2026/03/pagina-Bot-AI.png";
 
 const BotAISection = () => {
   return (
@@ -22,19 +25,13 @@ const BotAISection = () => {
             </p>
           </AnimatedSection>
 
-          {/* Image */}
-          <AnimatedCard delay={0.15}>
-            <div className="glass-card-hover p-3 rounded-2xl relative">
-              <img
-                src={mockupBotAI}
-                alt="Bot AI da Tower App"
-                className="w-full rounded-xl"
-                loading="lazy"
-              />
-              {/* Corner glow */}
-              <div className="absolute -top-4 -right-4 w-32 h-32 rounded-full bg-[radial-gradient(ellipse,hsl(187_82%_53%/0.12),transparent_70%)] pointer-events-none" />
-            </div>
-          </AnimatedCard>
+          {/* Image — browser mockup */}
+          <DeviceMockup
+            src={MOCKUP_BOT_AI}
+            alt="Bot AI da Tower App — assistente inteligente integrado"
+            variant="desktop"
+            delay={0.15}
+          />
         </div>
       </div>
     </section>

@@ -1,7 +1,13 @@
-import { AnimatedSection, AnimatedCard } from "@/components/AnimatedSection";
-import mockupDashboard from "@/assets/mockup-dashboard.png";
-import mockupFichas from "@/assets/mockup-fichas.png";
+import { AnimatedSection } from "@/components/AnimatedSection";
+import DeviceMockup from "@/components/ui/DeviceMockup";
 import { LayoutDashboard, FileSpreadsheet, Tag, Settings, Bot } from "lucide-react";
+
+const MOCKUP_DASHBOARD =
+  "https://estrategos.online/wp-content/uploads/2026/02/pagina-de-dashboard-scaled.png";
+const MOCKUP_DASHBOARD_2 =
+  "https://estrategos.online/wp-content/uploads/2026/02/tower.estrategos.online_dashboard-3-scaled.png";
+const MOCKUP_APRENDIZADO =
+  "https://estrategos.online/wp-content/uploads/2026/03/pagina-de-aprendizado.png";
 
 const features = [
   { icon: LayoutDashboard, label: "Dashboard Financeiro" },
@@ -35,28 +41,25 @@ const InsideSection = () => {
           ))}
         </AnimatedSection>
 
-        {/* Mockups */}
-        <div className="space-y-8">
-          <AnimatedCard>
-            <div className="glass-card-hover p-2 md:p-3 rounded-2xl">
-              <img
-                src={mockupDashboard}
-                alt="Dashboard financeiro da Tower App"
-                className="w-full rounded-xl"
-                loading="lazy"
-              />
-            </div>
-          </AnimatedCard>
-          <AnimatedCard delay={0.15}>
-            <div className="glass-card-hover p-2 md:p-3 rounded-2xl">
-              <img
-                src={mockupFichas}
-                alt="Fichas técnicas da Tower App"
-                className="w-full rounded-xl"
-                loading="lazy"
-              />
-            </div>
-          </AnimatedCard>
+        {/* Mockups — Desktop browser frames */}
+        <div className="space-y-10">
+          <DeviceMockup
+            src={MOCKUP_DASHBOARD}
+            alt="Dashboard financeiro da Tower App — visão geral do desempenho"
+            variant="desktop"
+          />
+          <DeviceMockup
+            src={MOCKUP_DASHBOARD_2}
+            alt="Dashboard de controle operacional da Tower App"
+            variant="desktop"
+            delay={0.15}
+          />
+          <DeviceMockup
+            src={MOCKUP_APRENDIZADO}
+            alt="Página de aprendizado — tutoriais e treinamento da Tower App"
+            variant="floating"
+            delay={0.25}
+          />
         </div>
       </div>
     </section>
