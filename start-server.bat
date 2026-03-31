@@ -1,0 +1,2 @@
+cd /d "C:\Users\RD JUNIOR\Desktop\GESTÃO SHARKS COMPANY\DEV MODELOS\MODELO LP DE VENDAS COM VSL"
+npx serve dist -l 5000 -s
