@@ -1,21 +1,6 @@
 import { motion } from "framer-motion";
-import { useEffect } from "react";
 
 const HeroSection = () => {
-  useEffect(() => {
-    // Load VTurb player script dynamically
-    const existingScript = document.querySelector(
-      'script[src*="converteai.net"][src*="69c1972c596c6131b74363e9"]'
-    );
-    if (!existingScript) {
-      const s = document.createElement("script");
-      s.src =
-        "https://scripts.converteai.net/f753492c-cab9-4c47-933a-4731a85ad0f0/players/69c1972c596c6131b74363e9/v4/player.js";
-      s.async = true;
-      document.head.appendChild(s);
-    }
-  }, []);
-
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-10 md:pt-16 pb-20 md:pb-28 px-4 md:px-6 bg-glow-top bg-grid overflow-hidden">
       {/* Glow de fundo na região do vídeo */}
@@ -78,18 +63,25 @@ const HeroSection = () => {
           Mais do que mostrar números, a Tower ajuda sua operação a entender com clareza o que sustenta o resultado — e o que <span className="glow-text-warm">corrói sua margem</span>.
         </motion.p>
 
-        {/* VTurb Video Player */}
+        {/* Panda Video Player */}
         <motion.div
           className="relative max-w-3xl mx-auto mb-10"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          {/* @ts-expect-error - vturb-smartplayer is a custom element */}
-          <vturb-smartplayer
-            id="vid-69c1972c596c6131b74363e9"
-            style={{ display: "block", margin: "0 auto", width: "100%" }}
-          />
+          <div style={{ position: "relative", paddingTop: "56.25%" }}>
+            <iframe
+              id="panda-d9eee367-8bef-4607-a464-73fcbf2a5349"
+              src="https://player-vz-47e0747d-262.tv.pandavideo.com.br/embed/?v=d9eee367-8bef-4607-a464-73fcbf2a5349"
+              style={{ border: "none", position: "absolute", top: 0, left: 0 }}
+              allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"
+              allowFullScreen
+              width="100%"
+              height="100%"
+              fetchPriority="high"
+            />
+          </div>
         </motion.div>
       </div>
     </section>

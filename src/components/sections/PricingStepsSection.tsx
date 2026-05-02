@@ -47,38 +47,29 @@ const c = {
 /* ── CSS Keyframes for the logo effects ── */
 const logoAnimationStyles = `
 @keyframes towerPulse {
-  0%, 100% { filter: brightness(1) drop-shadow(0 0 8px hsl(25 95% 55% / 0.15)); }
-  50% { filter: brightness(1.08) drop-shadow(0 0 16px hsl(25 95% 55% / 0.3)); }
+  0%, 100% { filter: brightness(1) drop-shadow(0 0 14px hsl(25 95% 55% / 0.25)); }
+  50% { filter: brightness(1.12) drop-shadow(0 0 28px hsl(25 95% 55% / 0.45)) drop-shadow(0 0 60px hsl(35 90% 50% / 0.15)); }
 }
 @keyframes towerFloat {
   0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
+  50% { transform: translateY(-6px); }
 }
-@keyframes orbitalSpin {
+@keyframes ringRotate {
   0% { transform: translate(-50%, -50%) rotate(0deg); }
   100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
-@keyframes orbitalSpinReverse {
-  0% { transform: translate(-50%, -50%) rotate(360deg); }
-  100% { transform: translate(-50%, -50%) rotate(0deg); }
-}
-@keyframes ringExpand {
-  0% { transform: translate(-50%, -50%) scale(0.92); opacity: 0.4; }
-  50% { transform: translate(-50%, -50%) scale(1.06); opacity: 0.15; }
-  100% { transform: translate(-50%, -50%) scale(0.92); opacity: 0.4; }
-}
-@keyframes ringExpand2 {
-  0% { transform: translate(-50%, -50%) scale(1.05); opacity: 0.2; }
-  50% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.4; }
-  100% { transform: translate(-50%, -50%) scale(1.05); opacity: 0.2; }
+@keyframes ringBreath {
+  0% { transform: translate(-50%, -50%) scale(0.96); opacity: 0.5; }
+  50% { transform: translate(-50%, -50%) scale(1.04); opacity: 0.2; }
+  100% { transform: translate(-50%, -50%) scale(0.96); opacity: 0.5; }
 }
 @keyframes glowPulse {
-  0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
-  50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.15); }
+  0%, 100% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.1); }
 }
-@keyframes dashedSpin {
-  0% { transform: translate(-50%, -50%) rotate(0deg); }
-  100% { transform: translate(-50%, -50%) rotate(360deg); }
+@keyframes beamPulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
 }
 @keyframes shimmer {
   0% { background-position: -200% center; }
@@ -303,28 +294,34 @@ const PricingStepsSection = () => {
         {/* ══  TOWER LOGO CONVERGENCE EFFECT  ══════════════════════ */}
         {/* ══════════════════════════════════════════════════════════ */}
         <motion.div
-          initial={{ opacity: 0, y: 60 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.9, delay: 0.3, ease: "easeOut" }}
-          className="relative mt-24 md:mt-32"
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
+          className="relative mt-14 md:mt-20"
         >
           {/* ── Horizontal Energy Lines connecting to center ── */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
             {/* Left energy line */}
             <div
-              className="absolute left-0 top-1/2 -translate-y-1/2 h-px"
+              className="absolute left-0 top-1/2 -translate-y-1/2"
               style={{
-                width: "calc(50% - 100px)",
-                background: `linear-gradient(90deg, transparent 0%, ${c.cyanDim} 40%, ${c.cyan} 100%)`,
+                width: "calc(50% - 140px)",
+                height: "2px",
+                background: `linear-gradient(90deg, transparent 0%, ${c.cyanDim} 30%, ${c.cyan} 100%)`,
+                boxShadow: `0 0 8px 1px ${c.cyanDim}`,
+                animation: "beamPulse 3s ease-in-out infinite",
               }}
             />
             {/* Right energy line */}
             <div
-              className="absolute right-0 top-1/2 -translate-y-1/2 h-px"
+              className="absolute right-0 top-1/2 -translate-y-1/2"
               style={{
-                width: "calc(50% - 100px)",
-                background: `linear-gradient(270deg, transparent 0%, ${c.cyanDim} 40%, ${c.cyan} 100%)`,
+                width: "calc(50% - 140px)",
+                height: "2px",
+                background: `linear-gradient(270deg, transparent 0%, ${c.cyanDim} 30%, ${c.cyan} 100%)`,
+                boxShadow: `0 0 8px 1px ${c.cyanDim}`,
+                animation: "beamPulse 3s ease-in-out infinite",
               }}
             />
           </div>
@@ -338,17 +335,48 @@ const PricingStepsSection = () => {
               whileInView={{ opacity: 1, scaleY: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="w-px h-16 mb-6 origin-top"
+              className="h-10 mb-4 origin-top"
               style={{
+                width: "2px",
                 background: `linear-gradient(180deg, ${c.green}, ${c.cyan})`,
-                boxShadow: `0 0 6px 1px ${c.cyanDim}`,
+                boxShadow: `0 0 10px 2px ${c.cyanDim}`,
+                animation: "beamPulse 3s ease-in-out infinite",
               }}
             />
 
             {/* ── Logo with orbital animations ── */}
-            <div className="relative" style={{ width: "280px", height: "280px" }}>
+            <div className="relative" style={{ width: "340px", height: "340px" }}>
 
-              {/* ── Layer 1: Radial glow pulse (deepest layer) ── */}
+              {/* ── Layer 1: Large radial glow (deepest, most visible) ── */}
+              <div
+                className="absolute pointer-events-none rounded-full"
+                style={{
+                  width: "360px",
+                  height: "360px",
+                  left: "50%",
+                  top: "50%",
+                  background: `radial-gradient(circle, hsl(25 95% 55% / 0.18), hsl(35 90% 50% / 0.06) 45%, transparent 70%)`,
+                  animation: "glowPulse 4s ease-in-out infinite",
+                }}
+              />
+
+              {/* ── Layer 2: Rotating gradient ring (premium effect) ── */}
+              <div
+                className="absolute pointer-events-none rounded-full"
+                style={{
+                  width: "300px",
+                  height: "300px",
+                  left: "50%",
+                  top: "50%",
+                  padding: "1.5px",
+                  animation: "ringRotate 20s linear infinite",
+                  background: `conic-gradient(from 0deg, transparent 0%, hsl(25 95% 55% / 0.4) 25%, transparent 50%, hsl(35 90% 50% / 0.3) 75%, transparent 100%)`,
+                  mask: "radial-gradient(farthest-side, transparent calc(100% - 1.5px), #fff calc(100% - 1.5px))",
+                  WebkitMask: "radial-gradient(farthest-side, transparent calc(100% - 1.5px), #fff calc(100% - 1.5px))",
+                }}
+              />
+
+              {/* ── Layer 3: Breathing ring ── */}
               <div
                 className="absolute pointer-events-none rounded-full"
                 style={{
@@ -356,59 +384,19 @@ const PricingStepsSection = () => {
                   height: "260px",
                   left: "50%",
                   top: "50%",
-                  background: `radial-gradient(circle, hsl(25 95% 55% / 0.12), hsl(35 90% 50% / 0.04) 50%, transparent 70%)`,
-                  animation: "glowPulse 4s ease-in-out infinite",
+                  border: `1px solid hsl(25 95% 55% / 0.12)`,
+                  animation: "ringBreath 5s ease-in-out infinite",
                 }}
               />
-
-              {/* ── Layer 2: Outer breathing ring ── */}
-              <div
-                className="absolute pointer-events-none rounded-full"
-                style={{
-                  width: "240px",
-                  height: "240px",
-                  left: "50%",
-                  top: "50%",
-                  border: `1px solid hsl(25 95% 55% / 0.08)`,
-                  animation: "ringExpand 6s ease-in-out infinite",
-                }}
-              />
-
-              {/* ── Layer 3: Inner breathing ring (offset timing) ── */}
-              <div
-                className="absolute pointer-events-none rounded-full"
-                style={{
-                  width: "180px",
-                  height: "180px",
-                  left: "50%",
-                  top: "50%",
-                  border: `1px solid hsl(35 90% 50% / 0.1)`,
-                  animation: "ringExpand2 5s ease-in-out infinite",
-                }}
-              />
-
-              {/* ── Layer 4: Dashed spinning ring ── */}
-              <div
-                className="absolute pointer-events-none rounded-full"
-                style={{
-                  width: "210px",
-                  height: "210px",
-                  left: "50%",
-                  top: "50%",
-                  border: `1px dashed hsl(25 95% 55% / 0.06)`,
-                  animation: "dashedSpin 30s linear infinite",
-                }}
-              />
-
 
               {/* ══ THE LOGO ITSELF (centered, on top) ══ */}
               <motion.div
-                initial={{ scale: 0.6, opacity: 0 }}
+                initial={{ scale: 0.5, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{
-                  duration: 0.8,
-                  delay: 0.5,
+                  duration: 0.9,
+                  delay: 0.4,
                   ease: [0.16, 1, 0.3, 1],
                 }}
                 className="absolute inset-0 z-20 flex items-center justify-center"
@@ -425,9 +413,9 @@ const PricingStepsSection = () => {
                   <img
                     src="https://estrategos.online/wp-content/uploads/2026/03/ChatGPT-Image-31-de-mar.-de-2026-16_32_39.png"
                     alt="Tower Logo"
-                    className="w-24 h-24 md:w-32 md:h-32 object-contain relative z-10"
+                    className="w-40 h-40 md:w-52 md:h-52 object-contain relative z-10"
                     style={{
-                      filter: "drop-shadow(0 0 12px hsl(25 95% 55% / 0.35)) drop-shadow(0 0 30px hsl(35 90% 50% / 0.15))",
+                      filter: "drop-shadow(0 0 16px hsl(25 95% 55% / 0.4)) drop-shadow(0 0 40px hsl(35 90% 50% / 0.18))",
                     }}
                   />
                 </div>
@@ -439,12 +427,12 @@ const PricingStepsSection = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.8 }}
-              className="mt-8 text-center"
+              transition={{ duration: 0.7, delay: 0.7 }}
+              className="mt-4 text-center"
             >
               {/* Shimmer text effect */}
               <p
-                className="text-lg md:text-xl font-bold tracking-wide"
+                className="text-lg md:text-2xl font-bold tracking-wide"
                 style={{
                   background: `linear-gradient(90deg, ${c.cyan}, hsl(35 80% 60%), ${c.green}, hsl(35 80% 55%), ${c.cyan})`,
                   backgroundSize: "200% auto",
